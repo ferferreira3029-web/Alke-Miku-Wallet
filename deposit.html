@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Alke Miku Wallet - Depositar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container animate__animated animate__slideInRight">
+        <h2 class="mb-4">Depositar</h2>
+
+        <div class="p-3 mb-4 rounded-4 bg-light border animate__animated animate__pulse animate__infinite">
+            <p class="mb-1 text-secondary small fw-bold">SALDO ACTUAL</p>
+            <h3 id="saldoActual" class="fw-bold text-primary">$0</h3>
+        </div>
+
+        <div id="alert-container"></div>
+
+        <form id="depositForm">
+            <div class="mb-4 text-start">
+                <label for="depositAmount" class="form-label fw-bold">Monto a ingresar:</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control form-control-lg" id="depositAmount" placeholder="0.00" required min="1">
+                </div>
+            </div>
+            
+            <button type="submit" id="btnConfirmarDeposito" class="btn btn-primary w-100 py-2 mb-3">
+    <span id="spinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+    <span id="btnText">Confirmar Depósito</span>
+</button>
+            
+            <a href="menu.html" class="btn btn-outline-secondary w-100">Volver</a>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

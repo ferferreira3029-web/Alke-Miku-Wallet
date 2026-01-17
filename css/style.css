@@ -1,0 +1,186 @@
+/* =========================================
+TEMA: MIKU GLITCH-POP (RELAJADO)
+   ========================================= */
+
+:root {
+    --miku-cyan: #39C5BB;
+    --miku-fucsia-pale: #86f5d4; /* Fucsia pálido sugerido */
+    --miku-dark: #1a202c;
+    --glitch-pink: rgb(32, 28, 32);
+    --glitch-cyan: #0ff;
+}
+
+/* 1. FONDO GRADIENTE MOVIMIENTO + REJILLA */
+body {
+    font-family: 'Rajdhani', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Gradiente pálido dinámico */
+    background: linear-gradient(-45deg, #40f0e4, #ffffff, var(--miku-fucsia-pale), #ffffff);
+    background-size: 400% 400%;
+    animation: gradientFlow 12s ease infinite;
+    position: relative;
+}
+
+/* Rejilla futurista superpuesta */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(57, 197, 187, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57, 197, 187, 0.15) 1px, transparent 1px);
+    background-size: 35px 35px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 2. CONTENEDOR ESTILO CRISTAL */
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 25px;
+    border: 2px solid white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 92%;
+    max-width: 400px;
+    position: relative;
+    z-index: 10;
+}
+
+/* 3. TÍTULOS CON GLITCH FUTURISTA */
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: var(--miku-dark);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+    display: inline-block;
+    animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 0 var(--glitch-cyan), -2px 0 var(--glitch-pink); }
+    25% { text-shadow: -2px 0 var(--glitch-cyan), 2px 0 var(--glitch-pink); }
+    50% { text-shadow: 2px -2px var(--glitch-cyan), -2px 2px var(--glitch-pink); }
+    75% { text-shadow: -2px 2px var(--glitch-cyan), 2px -2px var(--glitch-pink); }
+    100% { text-shadow: 2px 0 var(--glitch-cyan), -2px 0 var(--glitch-pink); }
+}
+
+/* 4. LOGO MÁS GRANDE CON SOMBRA */
+.miku-logo {
+    max-width: 200px !important; /* Un poco más grande */
+    height: auto;
+    margin: 0 auto 20px;
+    display: block;
+    filter: drop-shadow(0 8px 15px rgba(57, 197, 187, 0.5)); /* Sombra pedida */
+    transition: transform 0.3s;
+}
+
+/* 5. DASHBOARD SALDO */
+.p-4.rounded-4, .p-3.rounded-4.bg-light {
+    background: linear-gradient(135deg, var(--miku-cyan) 0%, #31aaa1 100%) !important;
+    border: none;
+    box-shadow: 0 10px 20px rgba(57, 197, 187, 0.2);
+}
+
+#saldo, #saldoActual {
+    font-family: 'Orbitron', sans-serif;
+    color: white !important;
+}
+
+/* 6. BOTONES (TODOS FUCSIA AL PASAR EL MOUSE) */
+.btn {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none !important; /* Quitamos bordes molestos */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Color inicial Cyan para los primarios */
+.btn-primary, .btn-outline-primary {
+    background-color: var(--miku-cyan) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(57, 197, 187, 0.2);
+}
+
+.btn-outline-primary {
+    border: none !important;
+}
+
+/* EFECTO FUCSIA PARA TODOS AL PASAR EL MOUSE */
+.btn:hover {
+    background-color: #ff69b4 !important; /* El fucsia que definimos */
+    color: white !important;
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4) !important;
+}
+
+/* 7. BOTÓN CERRAR SESIÓN (CONVERTIDO DE ENLACE) */
+.logout-miku {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.5) !important;
+    color: #718096 !important;
+    text-decoration: none;
+    border-radius: 12px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: 0.3s;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.logout-miku:hover {
+    background-color: #ff69b4 !important;
+    color: white !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+/* 8. LISTAS */
+.list-group-item {
+    border: none !important;
+    border-left: 5px solid var(--miku-cyan) !important;
+    background: #ffffff;
+    margin-bottom: 8px;
+    border-radius: 10px !important;
+    transition: 0.3s;
+}
+
+.list-group-item:hover {
+    border-left-color: #ff69b4 !important;
+}
+
+.spinner-border-sm {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Efecto opcional: que el botón se vea un poco transparente al estar cargando */
+.btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+    filter: grayscale(0.2);
+}

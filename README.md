@@ -1,6 +1,6 @@
 # 🩵 Alke Miku Wallet CV-01 🩷
 
-![Miku Banner](https://raw.githubusercontent.com/TuUsuario/TuRepositorio/main/img/miku%20wallet.png)
+![Miku Banner](https://raw.githubusercontent.com/TuUsuario/TuRepositorio/main/img/mikuwallet.png)
 
 > **"Digital melodies, secure transactions."** > Una billetera digital conceptual inspirada en el ecosistema de **Hatsune Miku**, diseñada para una experiencia de usuario fluida, futurista y con estética Cyber-Glitch.
 
